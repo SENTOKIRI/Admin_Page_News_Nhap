@@ -1,0 +1,156 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.Master.cs" Inherits="Admin_Page_News.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+     <style>
+        body{
+            display:flex;
+            justify-content:center;
+            align-items:center;
+          
+            
+        }
+        .container{
+            margin-top:10px;
+            border:1px solid;
+            padding:10px
+        }
+    </style>
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="Content/grid_style.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="~/Content/AdminLTE/plugins/font-awesome/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="~/Content/AdminLTE/dist/css/adminlte.min.css">
+    <link href="~/Content/animate.min.css" rel="stylesheet" />
+     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <link href="~/Content/jquery-ui.css" rel="stylesheet" />
+    <link href="../Content/tablecss.css" rel="stylesheet" />
+    <script src="../Scripts/ckeditor/ckeditor.js"></script>
+</head>
+
+<body class="body-content" >
+    <style>
+        .News-24h{
+            color:white;
+            text-shadow: 3px 3px 6px aqua;
+            margin-right:10px;
+            font-size:30px;
+            text-align:center;
+
+        }
+        .News-24h:hover{
+            color:red;
+        }
+        .input-seach{
+            width:200px;
+        }
+        .color{
+            color:white;
+        }
+    </style>
+    <form id="Form1" runat="server">
+        <div class="grid-container">
+    <div class=" col-md-2" >
+         
+            
+          <%-- <asp:Label ID="Lb_Admin" runat="server" Text="Admin" ></asp:Label>--%>
+            
+              
+            
+        <div class="main-sidebar sidebar-dark-primary elevation-4">          
+            <div class="sidebar">              
+                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                    <div >                     
+                        <span class="News-24h"> <i class="fa fa-newspaper-o" style="margin-left:10px;"></i>NEWS 24H</span>
+                    </div>
+                    <div class="info">
+                        <a href="#" class="d-block"></a>
+                    </div>
+                </div>               
+                <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                        <li class="nav-item" style="font-size:larger">
+                             <i class="fa fa-user-o nav-icon text-primary"></i>
+                             <asp:Label ID="LB_Admin" runat="server" CssClass="color"  ></asp:Label>
+                           
+                        </li>
+                        
+                        <li class="nav-header" style="font-size:1.1rem">Bài Viết</li> 
+                        
+                        <li class="nav-item">
+                            <a href="/Admin_Page/Add_News.aspx" class="nav-link">
+                               <i class="fa fa-plus-circle nav-icon text-primary"></i>
+                               <p>Thêm bài viết mới</p>
+                               </a>
+                         </li>
+                               
+                         <li class="nav-item">
+                             <a href="/Admin_Page/News.aspx" class="nav-link">
+                                <i class="fa fa-newspaper-o nav-icon text-primary"></i>
+                                <p>Tất cả bài viết</p>
+                              </a>
+                         </li>
+                                
+                         <li class="nav-item">
+                             <a href="/Admin_Page/Tag.aspx" class="nav-link">
+                                <i class="fa fa-tags nav-icon text-primary"></i>
+                                <p>Quản lý Tag</p>
+                             </a>
+                         </li>
+                         
+
+                         <li class="nav-header" style="font-size:1.1rem">Người dùng</li>
+                           
+                        <li class="nav-item">
+                             <a href="/Admin_Page/Users" class="nav-link">
+                                <i class="fa fa-users nav-icon text-primary"></i>
+                                <p>Quản lý người dùng</p>
+                             </a>
+                         </li>   
+
+                         <li class="nav-item">
+                             <a href="/Admin_Page/Users_Edit" class="nav-link">
+                                <i class="fa fa-user-circle-o nav-icon text-primary"></i>
+                                <p>Thông tin người dùng</p>
+                             </a>
+                         </li>
+                             
+                          
+                        
+                         <li class="nav-item">
+                             <a href="../Home/Home" class="nav-link">
+                                <i class="nav-icon fa fa-sign-out text-danger"></i>
+                                <p>Đăng xuất</p>
+                             </a>
+                         </li>
+                    </ul>
+                </nav>
+                
+            </div> 
+         </div>       
+    </div>
+       <div class=" content-wrapper col-md-10" style="min-height:600px" >
+         <div class="container-fluid">       
+            <asp:ContentPlaceHolder ID="MainAdmin" runat="server">
+            </asp:ContentPlaceHolder>
+            <hr />
+         </div>         
+       </div>        
+     </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,143 @@
+﻿.grid-container {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-areas:
+       /*"a1 a2 a3 a4 a5 a6 a7 a8 a9 a10 a11 a12"*/
+        "a1 a1 a2 a2 a2 a2 a2 a2 a2 a2 "
+        /*"b1 b1 a2 a2 a2 a2 a2 a2 a2 a2 "
+        "c1 c1 a2 a2 a2 a2 a2 a2 a2 a2"
+        "d1 d1 a2 a2 a2 a2 a2 a2 a2 a2"
+        "e1 e1 a2 a2 a2 a2 a2 a2 a2 a2"
+        "f1 f1 a2 a2 a2 a2 a2 a2 a2 a2"*/
+}
+
+.grid-option-1 {
+    grid-area: a1;
+    grid-gap: 5px;
+    background-color: aquamarine;
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.grid-option-2 {
+    grid-area: a1;
+    grid-gap: 5px;
+    background-color: aqua;
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.grid-option-3 {
+    grid-area: a1;
+    grid-gap: 5px;
+    background-color: hotpink;
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.grid-option-4 {
+    grid-area: a1;
+    grid-gap: 5px;
+    background-color: red;
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.grid-option-5 {
+    grid-area: a1;
+    grid-gap: 5px;
+    background-color: aquamarine;
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.grid-option-6 {
+    grid-area: a1;
+    grid-gap: 5px;
+    background-color: aquamarine;
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.grid-option-7 {
+    grid-area: a2;
+    grid-gap: 5px;
+    background-color: aquamarine;
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.grid-option-8 {
+    grid-area: a8;
+    grid-gap: 5px;
+    background-color: aquamarine;
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.grid-option-9 {
+    grid-area: a9;
+    grid-gap: 5px;
+    background-color: aquamarine;
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.grid-option-10 {
+    grid-area: a10;
+    grid-gap: 5px;
+    background-color: aquamarine;
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 10px;
+}
+.grid-option-11 {
+    grid-area: a11;
+    grid-gap: 5px;
+    background-color: aquamarine;
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.Button {
+    border: 1px solid;
+    border-radius: 5px;
+    font-size: larger;
+    margin: 10px;
+}
+
+.body-site-1 {
+    min-width: 50%;
+    min-height: 600px;
+    max-width: 70%;
+}
+
+.Tag-add-edit {
+    display: inline-block;
+    min-width: 200px;
+    min-height: 500px;
+    max-width: 500px;
+    max-height: max-content;
+    margin: 10px;
+    border: 1px solid;
+}
+
+.Tag-list {
+    display: inline-block;
+    min-width: 200px;
+    min-height: 500px;
+    max-width: 500px;
+    max-height: max-content;
+    margin: 10px;
+    border: 1px solid;
+}

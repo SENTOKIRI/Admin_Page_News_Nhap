@@ -1,0 +1,112 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="ContentCreator.master.cs" Inherits="Admin_Page_News.Content_Creator.ContentCreator" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>CREATOR </title> 
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="icon" href="~/Content/images/dvcp.ico" type="image/x-icon" />
+   <%-- <link href="~/Content/web/styles.css" rel="stylesheet" />--%>
+    <link href="~/Content/web/web.css" rel="stylesheet" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="@ViewBag.Title" />
+    <meta property="og:description" content="@ViewBag.Description" />
+    <meta property="og:image" content="@ViewBag.Image" />
+    <meta name="Description" content="@ViewBag.Description" />
+    <meta name="keywords" content="@ViewBag.Tag">  <link href="../Content/style.css" rel="stylesheet" />
+   
+    <link href="../Content/style.css" rel="stylesheet" />
+    <link href="../Content/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Content/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../Content/plugins/slick-carousel/slick.css" rel="stylesheet" />
+    <link href="../Content/plugins/slick-carousel/slick-theme.css" rel="stylesheet" />
+    <link href="../Content/css/style.css" rel="stylesheet" />
+    <link href="../Content/fontawesome-5.0.8/css/fontawesome-all.min.css" rel="stylesheet" />
+    <link href="../Content/iconic/css/material-design-iconic-font.min.css" rel="stylesheet" />
+    <link href="../Content/animate/animate.css" rel="stylesheet" />
+    <link href="../Content/css-hamburgers/hamburgers.min.css" rel="stylesheet" />
+    <link href="../Content/animsition/css/animsition.min.css" rel="stylesheet" />
+    <link href="../Content/css/util.min.css" rel="stylesheet" />
+    <link href="../Content/css/main.css" rel="stylesheet" />
+
+  
+   <%-- <link rel="stylesheet" href="~/Content/AdminLTE/dist/css/adminlte.min.css">--%>
+    <style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+  border-right:1px solid #bbb;
+}
+
+li:last-child {
+  border-right: none;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color :white;
+  
+  color:black;
+}
+
+</style>
+</head>
+<body>
+    <form id="form1" runat="server">
+         <div class="header">
+             <div class="container">
+             <ul>
+                   <li><a href="../Default.aspx">Home</a></li>
+                   <li><a href="../Content_Creator/create_news.aspx">Tạo bài viết</a></li>
+                   <li><a href="../Content_Creator/list_news.aspx">Danh sách bài viết</a></li>
+                   <li><a href="../Content_Creator/comment_user.aspx">Phản hồi từ người đọc:
+                      
+                       </a>
+                   </li>
+                   <li style="float:right">
+                       <a href="../Content_Creator/User_Infor.aspx">
+                       <asp:Label ID="lb_User_Name" runat="server"> </asp:Label>
+                       </a>
+                   </li>
+             </ul>
+                 </div>
+        </div>
+
+  
+        <div  style="padding:15px;">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+
+    <script src="../Content/plugins/jquery/jquery.js"></script>
+    <script src="../Content/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../Content/plugins/slick-carousel/slick.min.js"></script>
+    <script src="../Content/plugins/google-map/gmap.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC72vZw-6tGqFyRhhg5CkF2fqfILn2Tsw"></script>
+    <script src="../Content/js/custom.js"></script>
+    <script src="../Content/jquery/jquery-3.2.1.min.js"></script>
+    <script src="../Content/animsition/js/animsition.min.js"></script>
+    <script src="../Content/bootstrap/js/popper.js"></script>
+    <script src="../Content/bootstrap/js/bootstrap.min.js"></script>
+    </form>
+
+</body>
+</html>

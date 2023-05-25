@@ -1,0 +1,290 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Home.Master.cs" Inherits="Admin_Page_News.Home.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baomoi</title>
+    
+    <link rel="icon" href="~/Content/images/dvcp.ico" type="image/x-icon" />
+   <%-- <link href="~/Content/web/styles.css" rel="stylesheet" />--%>
+    <link href="~/Content/web/web.css" rel="stylesheet" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="@ViewBag.Title" />
+    <meta property="og:description" content="@ViewBag.Description" />
+    <meta property="og:image" content="@ViewBag.Image" />
+    <meta name="Description" content="@ViewBag.Description" />
+    <meta name="keywords" content="@ViewBag.Tag"> 
+    
+    <link href="../Content/style.css" rel="stylesheet" />
+    <link href="../Content/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Content/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../Content/plugins/slick-carousel/slick.css" rel="stylesheet" />
+    <link href="../Content/plugins/slick-carousel/slick-theme.css" rel="stylesheet" />
+    <link href="../Content/css/style.css" rel="stylesheet" />
+    <link href="../Content/fontawesome-5.0.8/css/fontawesome-all.min.css" rel="stylesheet" />
+    <link href="../Content/iconic/css/material-design-iconic-font.min.css" rel="stylesheet" />
+    <link href="../Content/animate/animate.css" rel="stylesheet" />
+    <link href="../Content/css-hamburgers/hamburgers.min.css" rel="stylesheet" />
+    <link href="../Content/animsition/css/animsition.min.css" rel="stylesheet" />
+    <link href="../Content/css/util.min.css" rel="stylesheet" />
+    <link href="../Content/css/main.css" rel="stylesheet" />
+    
+	<style>
+     .container{
+         padding:0px !important;
+     }
+	</style>
+</head>
+<body>   
+    
+<form id="form1" runat="server">
+   <%-- <div class="header">
+            <div class="container">
+                <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+                    <a href="#" class="navbar-brand">MENU</a>
+                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>           
+                    <a href="../Default.aspx" class="News-24h ">NEWS 24H</a>                 
+                    <div>                 
+                       <asp:TextBox ID="Tb_Seach" runat="server" Width="300px"  placeholder="Tìm kiếm" ></asp:TextBox>                                          
+                       <asp:Button ID="Bnt_Seach" runat="server" Text="Tìm kiếm"  OnClick="Bnt_Seach_Click1"  />
+                       
+                    </div>
+                    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                        <div class="navbar-nav m-auto">
+                            <a href="../Default.aspx" class="nav-item nav-link ">Home</a>                          
+                            <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Thế loại</a>
+                                <div class="dropdown-menu">
+                                  
+                                  <asp:DataList ID="DDL_The_Loai_1" runat="server" DataKeyField="Tag_ID" 
+                                   OnItemCommand="DDL_The_Loai_ItemCommand" RepeatColumns="3"  RepeatDirection="Vertical"
+                                    CssClass="bg-main ">                               
+                                   <ItemTemplate> 
+                                     <table >
+                                       <td>
+                                        <asp:LinkButton ID="Lbnt_The_Loai" CssClass=" dropdown-item btn " runat="server" Text='<%#Eval("Tag_Name")%>' CommandName="Tag_ID_1"></asp:LinkButton>
+                                       </td>
+                                      </table>
+                                    </ItemTemplate>
+                                  </asp:DataList>
+                                  
+                                </div>
+                            </div>                                                   
+                            <div class="nav-item dropdown ">                               
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                                <asp:Label ID="lb_User_Name" runat="server"> </asp:Label>
+                               
+                                </a>
+                                <div class="dropdown-menu bg-main"> 
+                                     <%  if(Session["userid"] == null){  %>
+                                      <a href="../Login.aspx" id="login" class="dropdown-item btn text-dropdown" >Đăng nhập</a>                           
+                                      <a href="../Singup.aspx" id="singup" class="dropdown-item btn">Đăng ký</a> 
+                                 
+                                    <% } else {%>                            
+                                      <a href="../Home/ThongTinNguoiDung.aspx" id="ThongTinNguoiDung" class="dropdown-item btn" >Thông tin người dùng</a> 
+                                      <a href="../Home/LichSuDoc.aspx?User_ID=<%:Session["userid"] %>" id="LichSu" class="dropdown-item btn " >Lịch sử đọc</a>                           
+                                      <a href="../Home/Theodoi.aspx?User_ID=<%:Session["userid"] %>" id="TheoDoi" class="dropdown-item btn ">Theo dõi</a>                                 
+                                    <% } %> 
+                                    </div>
+                                </div>
+                         </div>
+                    </div>
+                </nav>
+            </div>
+        </div>--%>
+
+
+    <%-- =====================================Test===================================================== --%>
+
+
+     <div class="main-navbar clearfix bg-dark">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-12">
+                  <nav class="navbar navbar-expand-lg site-main-nav navigation">
+                        <a class="navbar-brand d-lg-none" href="index.html">
+                          <img src="images/logos/footer-logo.png" alt=""> 
+                       </a>
+    
+                    <button class=" navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="fa fa-bars"></span>
+                    </button>
+  
+                      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                          <ul class="navbar-nav mr-auto">
+                             
+                              <li class="nav-item dropdown">
+                                  <a class="nav-link " href="../Default.aspx" >  Home </a>
+                              </li>
+                             
+                              <li class="nav-item dropdown custom-dropdown">
+                                      <div class="nav-item dropdown">
+                               <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    THỂ LOẠI
+                                  </a>
+                                <div >
+                                  
+                                  <asp:DataList ID="DDL_The_Loai" runat="server" DataKeyField="Tag_ID" 
+                                   OnItemCommand="DDL_The_Loai_ItemCommand" RepeatColumns="4" RepeatDirection="Horizontal"
+                                    CssClass=" custom-dropdown dropdown-menu ">                               
+                                   <ItemTemplate> 
+                                     <div class="mega-menu-item d-flex">
+                                        <asp:LinkButton ID="Lbnt_The_Loai" CssClass=" dropdown-item" runat="server" Text='<%#Eval("Tag_Name")%>' CommandName="Tag_ID_1"></asp:LinkButton>
+                                      </div>
+                                    </ItemTemplate>
+                                  </asp:DataList>
+                                  
+                                </div>
+                            </div>  
+                              </li>
+
+                              <li class="nav-item dropdown">
+                                      <div class="nav-item dropdown">
+                               <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    CHUYÊN MỤC
+                                  </a>
+                                <div >
+                                  
+                                  <asp:DataList ID="DDL_Chuyen_Muc" runat="server" DataKeyField="Category_ID" 
+                                   OnItemCommand="DDL_Chuyen_Muc_ItemCommand" RepeatColumns="2"  RepeatDirection="Horizontal"
+                                    CssClass=" dropdown-menu ">                               
+                                   <ItemTemplate> 
+                                     <div class="mega-menu-item d-flex">
+                                        <asp:LinkButton ID="Lbnt_chuyenmuc" CssClass=" dropdown-item" runat="server" Text='<%#Eval("Category_Name")%>' CommandName="chuyenmuc"></asp:LinkButton>
+                                       </div>
+                                    </ItemTemplate>
+                                  </asp:DataList>
+                                  
+                                </div>
+                            </div>  
+                              </li>
+
+                             
+
+                              <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  <asp:Label ID="lb_User_Name" runat="server"> </asp:Label>
+                                </a>
+                                <div class="dropdown-menu">
+                                   
+                                     <%  if(Session["userid"] == null){  %>
+                                      <a href="../Login.aspx" id="login" class="dropdown-item " >Đăng nhập</a>                           
+                                      <a href="../Singup.aspx" id="singup" class="dropdown-item ">Đăng ký</a> 
+                                 
+                                    <% } else {%>                            
+                                      <a href="../Home/ThongTinNguoiDung.aspx" id="ThongTinNguoiDung" class="dropdown-item " >Thông tin người dùng</a> 
+                                      <a href="../Home/LichSuDoc.aspx?User_ID=<%:Session["userid"] %>" id="LichSu" class="dropdown-item  " >Lịch sử đọc</a>                           
+                                      <a href="../Home/Theodoi.aspx?User_ID=<%:Session["userid"] %>" id="TheoDoi" class="dropdown-item ">Theo dõi</a>                                 
+                                    <% } %> 
+                                   
+                                </div>
+                            </li>
+                          </ul>
+
+                         
+                          <div class="nav-search ml-auto d-none  d-inline-flex" >
+                               <div class="input-group">
+                             <asp:TextBox ID="Tb_Seach" CssClass="form-control rounded" Width="300px" runat="server"  placeholder="Tìm kiếm"  ></asp:TextBox>                                          
+                             <asp:Button ID="Bnt_Seach" runat="server" CssClass="btn btn-outline-danger" onsubmit = "return validateForm()" Text="SEARCH" OnClick="Bnt_Seach_Click1"  />
+                              </div>
+
+                          <%--    <div class="row">
+                                 <asp:TextBox ID="Tb_Seach" CssClass="form-control rounded" Width="300px" runat="server"  placeholder="Tìm kiếm"  ></asp:TextBox>                                          
+                                 <a class="btn btn-outline-danger" id="seach" href="../Home/timkiemtin?News_Title=<%:Tb_Seach.Text%> ">
+                                      <i class="fa fa-seach"> search </i>
+                                 </a>
+                                      </div>--%>
+
+                      </div>
+                      </div>
+                  </nav>
+                  
+              </div>
+          </div>
+      </div>
+     
+    </div>
+     <script type = "text/javascript">
+
+
+            <%-- function ghi() {
+                 var str1 = document.getElementById('<%= Tb_Seach.ClientID %>').value;
+                 document.querySelector('<%= seach.ClientID %>').href
+            document.getElementById('<%= TextBox3.ClientID %>').value = str1 + str2;
+        }--%>
+     
+
+
+         function validateForm()  {
+             var u = document.getElementById("Tb_Seach").value;
+
+             if (u == "") {
+                 alert("Hãy nhập gì đó !");
+                 return false;
+             }
+            
+             return true;
+             }
+
+             
+     </script>
+
+       <%-- =====================================end Test===================================================== --%>
+    
+    <div class="container">
+    <asp:ContentPlaceHolder ID="Head_Home" runat="server">
+    </asp:ContentPlaceHolder>
+    </div>
+    
+
+     
+    <div class="container " style="justify-content:space-between !important" >
+        <asp:ContentPlaceHolder ID="Home" runat="server">
+        </asp:ContentPlaceHolder> 
+    </div>
+
+    <div class="header bg-black" style="padding:10px;" >
+      <div class="container" style="height:100%;max-height:500px;" >
+         <div class="row">
+          
+             <style>
+                 .footettext{
+                     color:white;
+                     font-family:Cambria;
+                     line-height:1.2;
+                 }
+             </style>
+             <div class="col-md-5" style="text-align:left">
+                <p class="footettext">Cơ quan chủ quản: Bộ Thông tin và Truyền thông</p>              
+                <p class="footettext">Tổng biên tập: Phạm Anh Tuấn</p>
+                <p class="footettext">Tòa soạn: Tòa nhà C'Land - 156 Xã Đàn 2, Đống Đa, Hà Nội</p>
+                <p class="footettext">Hotline: 19001081 (8-20h) | 0923457788 (ngoài giờ HC)</p>
+               
+             </div>
+         </div>
+      </div>
+    </div>
+    <script src="../Content/plugins/jquery/jquery.js"></script>
+    <script src="../Content/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../Content/plugins/slick-carousel/slick.min.js"></script>
+    <script src="../Content/plugins/google-map/gmap.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC72vZw-6tGqFyRhhg5CkF2fqfILn2Tsw"></script>
+    <script src="../Content/js/custom.js"></script>
+    <script src="../Content/jquery/jquery-3.2.1.min.js"></script>
+    <script src="../Content/animsition/js/animsition.min.js"></script>
+    <script src="../Content/bootstrap/js/popper.js"></script>
+    <script src="../Content/bootstrap/js/bootstrap.min.js"></script>
+
+
+    </form>
+   
+</body>
+</html>
+
+
+

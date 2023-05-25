@@ -1,0 +1,227 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin_Web.master.cs" Inherits="Admin_Page_News.Admin_Web.Admin_Web" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title> Quản trị viên NEWS-24H</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+     
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="icon" href="~/Content/images/dvcp.ico" type="image/x-icon" />
+   <%-- <link href="~/Content/web/styles.css" rel="stylesheet" />--%>
+   <link href="~/Content/web/web.css" rel="stylesheet" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="@ViewBag.Title" />
+    <meta property="og:description" content="@ViewBag.Description" />
+    <meta property="og:image" content="@ViewBag.Image" />
+    <meta name="Description" content="@ViewBag.Description" />
+    <meta name="keywords" content="@ViewBag.Tag"> 
+    
+    <link href="../Content/style.css" rel="stylesheet" />
+    <link href="../Content/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Content/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../Content/plugins/slick-carousel/slick.css" rel="stylesheet" />
+    <link href="../Content/plugins/slick-carousel/slick-theme.css" rel="stylesheet" />
+    <link href="../Content/css/style.css" rel="stylesheet" />
+    <link href="../Content/fontawesome-5.0.8/css/fontawesome-all.min.css" rel="stylesheet" />
+    <link href="../Content/iconic/css/material-design-iconic-font.min.css" rel="stylesheet" />
+    <link href="../Content/animate/animate.css" rel="stylesheet" />
+    <link href="../Content/css-hamburgers/hamburgers.min.css" rel="stylesheet" />
+    <link href="../Content/animsition/css/animsition.min.css" rel="stylesheet" />
+    <link href="../Content/css/util.min.css" rel="stylesheet" />
+    <link href="../Content/css/main.css" rel="stylesheet" />
+    
+
+  
+    <link rel="stylesheet" href="~/Content/AdminLTE/dist/css/adminlte.min.css">
+     <script src="../Scripts/jquery-3.3.1.slim.min.js"></script>
+    <script src="../Scripts/popper.min.js"></script>
+    <script src="../Scripts/bootstrap.min.js"></script>
+
+   <%-- <style>
+         li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size:20px;
+        border-right: 1px solid #bbb;
+        }
+         li a:hover:not(.active) {
+            background-color: white;
+            color: black;
+        }
+         .News-24h{
+            color:white;
+            text-shadow: 3px 3px 6px aqua;
+            margin-right:10px;
+            font-size:20px;
+            text-align:center;
+
+        }
+        .News-24h:hover{
+            color:red;
+        }
+        .dropdown-item:hover{
+            color:blue;
+            background-color:aqua;
+        }
+    </style>--%>
+</head>
+<body>
+    <form id="form1" runat="server">
+       
+ <%-- <ul class="nav nav-tabs bg-black sticky-top">
+      <li class="nav-item">
+          <asp:ImageButton ID="ImageButton1" runat="server" Width="120px" ImageUrl="../images/logo-news24h.png" OnClick="ImageButton1_Click" />
+      </li>
+  
+  <li class="nav-item"><a href="../admin_web/list_news_qtv.aspx"> <i class="bi bi-list-ul"></i>Danh sách bài viết</a></li>
+  <li class="nav-item dropdown">
+    <a class=" dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Chuyên mục </a>
+    <ul class="dropdown-menu ">
+        <li><a class="dropdown-item" href="../admin_web/category.aspx">quản lý chuyên mục</a> </li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="../admin_web/tag_news.aspx">quản lý thể loại</a> </li>
+    </ul>
+  </li>
+    <li class="nav-item dropdown">
+    <a class=" dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Người dùng </a>
+    <ul class="dropdown-menu ">
+        <li><a class="dropdown-item" href="../admin_web/user_ql.aspx">quản lý người dùng</a> </li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="../admin_web/user_comment.aspx">phản hồi từ người dùng</a> </li>     
+    </ul>
+  </li>
+     
+
+  <li class="nav-item" >
+      <div>
+
+     <a href="../admin_web/user_infor_admin.aspx"><asp:Label ID="Label1" runat="server" ></asp:Label></a>
+      </div>
+  </li>
+      
+</ul>--%>
+
+
+
+        
+    <%-- =====================================Test===================================================== --%>
+
+
+     <div class="main-navbar clearfix bg-black">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-12">
+                  <nav class="navbar navbar-expand-lg site-main-nav navigation">
+                        <a class="navbar-brand d-lg-none" href="index.html">
+                          <img src="images/logos/footer-logo.png" alt=""> 
+                       </a>
+    
+                    <button class=" navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="fa fa-bars"></span>
+                    </button>
+  
+                      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                          <ul class="navbar-nav mr-auto">
+                             
+                             
+                               <li class="nav-item dropdown">
+                                  <a class="nav-link " href="../admin_web/list_news_qtv.aspx" > DANH SÁCH TIN </a>
+                              </li>
+                             
+                              <li class="nav-item dropdown custom-dropdown">
+                                      <div class="nav-item dropdown">
+                               <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                     CHUYÊN MỤC
+                                  </a>
+                                 <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="../admin_web/category.aspx">Quản lý chuyên mục</a> 
+                                    <a class="dropdown-item" href="../admin_web/tag_news.aspx">Quản lý thể loại</a> 
+                                              
+                                </div>
+                            </div>  
+                              </li>
+
+                              <li class="nav-item dropdown">
+                                      <div class="nav-item dropdown">
+                               <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  NGƯỜI DÙNG
+                                  </a>
+                                 <div class="dropdown-menu">
+                                   <a class="dropdown-item" href="../admin_web/user_ql.aspx">Quản lý người dùng</a> 
+                                   <a class="dropdown-item" href="../admin_web/user_comment.aspx">Phản hồi từ người dùng</a> 
+                                </div>
+                            </div>  
+                              </li>
+
+                             
+
+                          </ul>
+
+                          <div class="nav-search ml-auto d-none  d-inline-flex" >
+                           <a class="nav-link " href="../admin_web/user_infor_admin.aspx" >  <asp:Label ID="Label2" runat="server" ></asp:Label> </a>
+                      </div>
+                          </div>
+                  </nav>
+                  
+              </div>
+          </div>
+      </div>
+     
+    </div>
+     
+
+       <%-- =====================================end Test===================================================== --%>
+    
+
+
+
+        
+        <div style="margin:15px;">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+         <div class=" bg-black " style="padding:10px;" >
+      <div class="container" style="height:100%;max-height:500px;" >
+         <div class="row">
+          
+             <style>
+                 .footettext{
+                     color:white;
+                     font-family:Cambria;
+                     line-height:1;
+                 }
+             </style>
+             <div class="col-md-5" style="text-align:left">
+                             
+                <p class="footettext">Tổng biên tập: Phạm Anh Tuấn</p>
+                <p class="footettext">Tòa soạn: Tòa nhà C'Land - 156 Xã Đàn 2, Đống Đa, Hà Nội</p>
+                <p class="footettext">Hotline: 19001081 (8-20h) | 0923457788 (ngoài giờ HC)</p>
+               
+             </div>
+         </div>
+      </div>
+    </div>
+        
+    <script src="../Content/plugins/jquery/jquery.js"></script>
+    <script src="../Content/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../Content/plugins/slick-carousel/slick.min.js"></script>
+    <script src="../Content/plugins/google-map/gmap.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC72vZw-6tGqFyRhhg5CkF2fqfILn2Tsw"></script>
+    <script src="../Content/js/custom.js"></script>
+    <script src="../Content/jquery/jquery-3.2.1.min.js"></script>
+    <script src="../Content/animsition/js/animsition.min.js"></script>
+    <script src="../Content/bootstrap/js/popper.js"></script>
+    <script src="../Content/bootstrap/js/bootstrap.min.js"></script>
+
+    
+    </form>
+</body>
+</html>
